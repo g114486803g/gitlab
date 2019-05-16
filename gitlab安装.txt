@@ -1,0 +1,26 @@
+yum -y install bash-completion.noarch vim wget curl policycoreutils-python openssh-server
+
+curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh |  bash
+
+yum -y install gitlab-ce
+
+修改如下
+vim  /etc/gitlab/gitlab.rb
+
+连接
+external_url 'http://172.16.8.199'
+备份
+gitlab_rails['backup_path'] = '/coco/abc-backups'
+
+创建目录
+mkdir /coco/abc-backups -p
+
+重置生效
+gitlab-ctl reconfigure
+gitlab-ctl restart
+
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --reload
+
+官方社区版参考文档
+https://about.gitlab.com/install/#centos-7?version=ce
