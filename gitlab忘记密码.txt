@@ -1,0 +1,19 @@
+gitlab忘记密码
+登录控制台
+gitlab-rails console production
+
+查看ID
+user = User.where(id: 1).first
+
+密码
+user.password = '123qwe123'
+密码
+user.password_confirmation = '123qwe123'
+
+保存（注意后面的！号必须加。密码必须8位数以上）
+user.save!
+
+
+
+
+
