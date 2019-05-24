@@ -14,6 +14,27 @@ user.password_confirmation = '123qwe123'
 user.save!
 
 
+[root@gitb201 ~]# su - git
+上一次登录：四 5月 23 19:06:51 CST 2019pts/0 上
+-sh-4.2$ gitlab-rails console production
+-------------------------------------------------------------------------------------
+ GitLab:       11.10.4-ee (88a3c791734)
+ GitLab Shell: 9.0.0
+ PostgreSQL:   9.6.11
+-------------------------------------------------------------------------------------
+Loading production environment (Rails 5.0.7.2)
+irb(main):001:0> user = User.where(id: 1).first
+=> #<User id:1 @root>
+irb(main):002:0> user.password = '123qwe123'
+=> "123qwe123"
+irb(main):003:0> user.password_confirmation = '123qwe123'
+=> "123qwe123"
+irb(main):004:0> user.save!
+Enqueued ActionMailer::DeliveryJob (Job ID: 878599aa-d2db-4cdb-9029-8979521e0dd5) to Sidekiq(mailers) with arguments: "DeviseMailer", "password_change", "deliver_now", #<GlobalID:0x00007fbebfb5bca8 @uri=#<URI::GID gid://gitlab/User/1>>
+=> true
+irb(main):005:0> exit
+-sh-4.2$ exit
+登出
 
 
 
