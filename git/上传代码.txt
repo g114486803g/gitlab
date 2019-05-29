@@ -1,0 +1,10 @@
+
+git clone https://github.com/g114486803g/docker.git redis
+
+cd redis
+上传一个文件夹
+git add redis-5.0.5/
+打标记
+git commit -m "redis5"
+推送
+git push -u origin master
