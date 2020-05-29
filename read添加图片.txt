@@ -1,0 +1,15 @@
+“blob/master”转为“raw/master”
+
+还有一点要注意的是：![Image text]这个标识不可缺少，不然就显示文字了。
+创建文件
+mkdir images-folder
+
+git add images-folder/
+ git commit -m '23'
+ git push origin master
+
+
+http://gitlab.yunpiaoer.com/devops/test-yaml/blob/master/images-folder/jenkns.png
+
+
+http://gitlab.yunpiaoer.com/devops/k8s-install/raw/master/images-folder/2333.png
